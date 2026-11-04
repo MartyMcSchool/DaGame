@@ -1,7 +1,46 @@
+import java.util.Scanner;
+
 public class Game {
     Player player1;
     Player player2;
     private int numberOfRounds;
+
+    public void start(Scanner input) {
+        String userChoice;
+
+            do {
+                System.out.printf("Kasta %s!%n", player1.getName());
+                userChoice = input.nextLine();
+                player1.setHighscore(D6.roll());
+                if (userChoice.equalsIgnoreCase("end")) {
+                    break;
+                }
+                System.out.printf("Du rullade %d%n", player1.getHighscore());
+
+                System.out.printf("Kasta %s!%n", player2.getName());
+                userChoice = input.nextLine();
+                player2.setHighscore(D6.roll());
+                if (userChoice.equalsIgnoreCase("end")) {
+                    break;
+                }
+                System.out.printf("Du rullade %d%n", player2.getHighscore());
+
+                if (player1.getHighscore() > player2.getHighscore()) {
+                    System.out.printf("%s vann!%n", player1.getName());
+                    player1.win();
+                } else if (player1.getHighscore() < player2.getHighscore()) {
+                    System.out.printf("%s vann!%n", player2.getName());
+                    player2.win();
+                } else {
+                    System.out.println("Lika!");
+                }
+                addNumberOfRounds();
+                System.out.printf("Ställning efter %d ronder!%n", getNumberOfRounds());
+                System.out.printf("%s Vinster: %d%n%s Vinster: %d%n",
+                        player1.getName(), player1.getWins(), player2.getName(), player2.getWins());
+
+            } while (true);
+    }
 
     public void addNumberOfRounds() {
         numberOfRounds++;
