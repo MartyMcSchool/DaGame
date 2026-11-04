@@ -1,0 +1,7 @@
+Skapa Spelare
+Meny visas
+Välj poängmål
+Spelare 1 får val: Kasta tärning eller power-ups
+Spelar kastar tärning tills roll==1 eller avbryter
+Summera kasten, om 1 så är summan 0
+Spelares 2 tur. (repeat rad 4 till 7 till någon når målet)

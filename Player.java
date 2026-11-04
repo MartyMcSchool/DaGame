@@ -1,7 +1,6 @@
 public class Player {
     private String name;
     private int highscore;
-    private int numberOfRounds;
     private int wins;
 
     public Player(String name) {
@@ -13,7 +12,6 @@ public class Player {
         }
         this.name = name;
         this.highscore = 0;
-        this.numberOfRounds = 0;
         this.wins = 0;
     }
 
@@ -33,16 +31,12 @@ public class Player {
         this.highscore = highscore;
     }
 
-    public int getNumberOfRounds() {
-        return numberOfRounds;
-    }
-
-    public void setNumberOfRounds(int numberOfRounds) {
-        this.numberOfRounds = numberOfRounds;
-    }
-
     public int getWins() {
         return wins;
+    }
+
+    public void win() {
+        wins++;
     }
 
     public void setWins(int wins) {
