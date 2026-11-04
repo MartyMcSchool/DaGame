@@ -16,20 +16,25 @@ public class Game {
                     break;
                 }
                 System.out.printf("Du rullade %d%n", player1.getHighscore());
+                System.out.println("---------------");
 
                 System.out.printf("Kasta %s!%n", player2.getName());
+                System.out.println("---------------");
                 userChoice = input.nextLine();
                 player2.setHighscore(D6.roll());
                 if (userChoice.equalsIgnoreCase("end")) {
                     break;
                 }
-                System.out.printf("Du rullade %d%n", player2.getHighscore());
+                System.out.printf("Du rullade %d%n%n", player2.getHighscore());
+                System.out.println("---------------");
 
                 if (player1.getHighscore() > player2.getHighscore()) {
                     System.out.printf("%s vann!%n", player1.getName());
+                    System.out.println("----------------");
                     player1.win();
                 } else if (player1.getHighscore() < player2.getHighscore()) {
                     System.out.printf("%s vann!%n", player2.getName());
+                    System.out.println("---------------");
                     player2.win();
                 } else {
                     System.out.println("Lika!");
@@ -38,6 +43,7 @@ public class Game {
                 System.out.printf("Ställning efter %d ronder!%n", getNumberOfRounds());
                 System.out.printf("%s Vinster: %d%n%s Vinster: %d%n",
                         player1.getName(), player1.getWins(), player2.getName(), player2.getWins());
+                        System.out.println("---------------");
 
             } while (true);
     }
